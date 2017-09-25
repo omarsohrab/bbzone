@@ -12,10 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/admin');
+});
+Route::get('/about', function () {
+    return "custom Dash";
 });
 
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
 });
